@@ -1,5 +1,7 @@
 . ~/.dotfiles/funcs.sh
 
+export EDITOR="/bin/ed"
+
 export PATH=""
 addpath "/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "/usr/local/sbin"
 addpath "$HOME/bin"
