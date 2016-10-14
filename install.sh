@@ -1,10 +1,12 @@
 #!/bin/sh
 
-if [ -f "$HOME/.profile" ]; then
-	mv ~/.profile ~/.profile.old
-fi
-if [ -f "$HOME/.kshrc" ]; then
-	mv ~/.kshrc ~/.kshrc.old
-fi
-ln -s ~/.dotfiles/profile ~/.profile
-ln -s ~/.dotfiles/kshrc ~/.kshrc
+installdot() {
+	if [ -f "$HOME/.$1" ]; then
+		mv "$HOME/.$1" "$HOME/.$1.old"
+	fi
+	ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
+}
+
+installdot "profile"
+installdot "kshrc"
+installdot "vimrc"
