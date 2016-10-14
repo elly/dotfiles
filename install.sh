@@ -1,12 +1,15 @@
 #!/bin/sh
 
 installdot() {
-	if [ -f "$HOME/.$1" ]; then
-		mv "$HOME/.$1" "$HOME/.$1.old"
+	d=${2:-.$1}
+	if [ -f "$HOME/$d" ]; then
+		mv "$HOME/$d" "$HOME/$d.old"
 	fi
-	ln -s "$HOME/.dotfiles/$1" "$HOME/.$1"
+	ln -s "$HOME/.dotfiles/$1" "$HOME/$d"
 }
 
 installdot "profile"
 installdot "kshrc"
 installdot "vimrc"
+installdot "i3" ".config/i3/config"
+installdot "i3status" ".config/i3status/config"
