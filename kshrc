@@ -1,6 +1,6 @@
 . ~/.dotfiles/funcs.sh
 
-export PS1="$(rootsigil) "
+export PS1="$(hostname)$(rootsigil) "
 
 alias g='grep -rIn'
 alias ed='ed -p "% "'
