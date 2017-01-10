@@ -8,6 +8,7 @@ installdot() {
 	ln -s "$HOME/.dotfiles/$1" "$HOME/$d"
 }
 
+installdot "emacs"
 installdot "profile"
 installdot "kshrc"
 installdot "vimrc"
