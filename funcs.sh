@@ -13,6 +13,18 @@ addpath() {
 	done
 }
 
+remote_login() {
+	env | grep -q SSH_CLIENT ; return $?
+}
+
+machname() {
+	if remote_login ; then
+		echo "$(hostname -s)"
+	else
+		echo ""
+	fi
+}
+
 rootsigil() {
 	euid=$(id -u)
 	if [ "$euid" -eq "0" ]; then
